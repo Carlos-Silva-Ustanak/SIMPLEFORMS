@@ -1,0 +1,245 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+body{
+background-image: url('../img/452372-artwork-warm-purple.png');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+background-position: center center;
+}
+
+.forms{
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: -100px;
+}
+
+#h1form{
+    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.field{
+margin-top: 100px;
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 650px;
+width: 80%;
+border-radius: 10px;
+border-color: black;
+}
+
+.inputdiv{
+height: 100%;
+width: 80%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#nome{
+height: 25px;
+width: 80%;
+border-radius: 10px;
+margin-top: 20px;
+border-style:solid;
+border-color:black;
+cursor: pointer;
+}
+
+::-webkit-input-placeholder{
+color: black;
+font-family: 'Fredoka One', cursive;
+}
+
+#email{
+    height: 25px;
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 10px;
+    border-style:solid;
+    border-color:black;
+    cursor: pointer;
+}
+
+#date{
+height: 25px;
+width: 70%;
+border-radius: 10px;
+margin-top: 20px;
+border-style: solid;
+border-color: black;
+cursor: pointer;
+}
+
+#NOMELABEL, #EMAILLABEL, #DATELABEL{
+    font-family: 'Fredoka One', cursive;
+    padding-top: 15px;
+}
+
+.radiodiv{
+width: 100%;
+height: 200px;
+display: flex;
+margin-bottom: 305px;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+#estadocivil{
+    padding-top: 15px;
+    font-family: 'Fredoka One', cursive;
+}
+
+#radiofield{
+height: 50px;
+width: 40%;
+margin-top:15px;
+border-radius: 15px;
+border-color: black;
+display: flex;
+border-style: solid;
+flex-direction: column;
+margin-bottom: 55px;
+}
+
+.COMPROMETIDODIV{
+height: 50%;
+width: 100%;
+display: flex;
+justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.SOLTEIRODIV{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10PX;
+}
+
+#COMPRO, #SOLTO{
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+}
+
+.checkbox{
+
+width: 100%;
+height: 100px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#CATDOG{
+    font-family: 'Fredoka One', cursive;
+    padding-top: 15PX;
+    display: flex;
+    justify-content: center;
+}
+
+#fieldcheckbox{
+    width: 90%;
+    height: 40px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+}
+
+.gatodiv, .dogdiv{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 50%;
+}
+
+#gatocheck, #dogcheck{
+    font-family: 'Fredoka One', cursive;
+}
+
+#details{
+    font-family: 'Fredoka One', cursive;
+    padding-top: 15px;
+}
+
+#textdetails{
+margin-top: 15px;
+padding-top: 10px;
+width: 70%;
+border-radius: 10px;
+text-align: center;
+}
+
+.textareadiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+#BOTAO{
+margin-top: 150PX;
+height: 35PX;
+border-radius: 20PX;
+font-family: 'Fredoka One', cursive;
+border-style: solid;
+background: transparent;
+font-size: 27PX;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+color: black;
+display: flex;
+}
+
+@media (max-width:850px){
+
+.field{
+margin-top: 200px;
+height: 700px;
+}
+
+#BOTAO{
+margin-top: 170PX;
+}
+
+#CATDOG{
+text-align: center
+}
+
+#h1form{
+margin-bottom: 20px;
+}
+
+#DATELABEL{
+text-align: center;
+}
+
+#h1form{
+margin-bottom: 30px;
+}
+
+}

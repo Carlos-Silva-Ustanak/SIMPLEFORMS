@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<h1 id="h1form">Formulário</h1>
+
+<form action="#" method="get" class="forms">
+
+<fieldset  class="field">
+
+    <div class="inputdiv">
+      
+        <label for="nome" id="NOMELABEL">NOME</label>
+        <input type="text" id="nome"   placeholder="Insira seu nome completo"  style="text-align:center;" required>
+        <label for="date" id="DATELABEL">DATA DE NASCIMENTO</label>
+        <input type="date" name="nascimento" id="date" style="text-align: center;" required>
+        <label for="email" id="EMAILLABEL">EMAIL</label>
+        <input type="email"  name="email" id="email" style="text-align: center;" placeholder="Insira seu email" required> 
+
+    </div>
+
+    <div class="radiodiv">
+
+
+<label for="" id="estadocivil">ESTADO CIVIL</label>
+
+<fieldset id="radiofield">
+
+<div class="COMPROMETIDODIV">
+
+    <input type="radio" name="radioinput" id="comprometido" required>
+    <label id="COMPRO" for="comprometido">COMPROMETIDO</label>
+
+</div>    
+
+<div class="SOLTEIRODIV">
+
+    <input type="radio" name="radioinput" id="solteiro" required>
+    <label id="SOLTO" for="solteiro">SOLTEIRO</label>
+
+</div>  
+
+<div class="checkbox">
+
+    <LABEl id="CATDOG">GATO OU CACHORRO?</LABEl>
+
+    <fieldset id="fieldcheckbox">
+
+<div class="gatodiv">
+
+<input type="checkbox" name="gatocheck"  id="gatocheck">
+<label id="gatocheck" for="gatocheck">GATO</label>
+
+</div>
+
+<div class="dogdiv">
+
+<input type="checkbox" name="dogcheck" r id="dogcheck">
+<label for="dogcheck" id="dogcheck">CACHORRO</label>
+
+</div>
+
+    </fieldset>
+    
+ <div class="textareadiv">
+    <label for="textdetails" id="details">DETALHES</label>
+    <textarea name="texdetails" placeholder="um pouco 
+mais 
+sobre você" id="textdetails" required rows="5" style="resize: none;"></textarea>
+ </div>
+
+</div>
+<button type="submit" id="BOTAO">ENVIAR</button>
+
+</fieldset>
+
+</div>
+
+</fieldset>
+
+</form>
+
+</body>
+
+</html>
