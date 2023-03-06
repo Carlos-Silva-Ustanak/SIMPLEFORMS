@@ -12,7 +12,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "open index.html",
-            "file": "C:\\Users\\Carlos Silva\\Login atividade\\index.html"
+            "file": "C:\\Users\\Carlos Silva\\CODDING\\SIMPLEFORMS-login-with-js\\index.html"
         }
     ]
 }
