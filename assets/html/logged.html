@@ -15,32 +15,38 @@
 
 <div class="inputs">
 
-<form action="">
+<form id="forms" action="">
 
     <label for="produto">PRODUTOS:</label>
     <input id="produtos" required name="produto" type="text">
     <label for="preço">PREÇO:</label>
     <input required id="preco" type="text">
     <label for="prime">É PRIME?</label>
-    <input type="checkbox" name="prime" id="">
-    <button type="submit" id="savebutton">ENVIAR</button>
+    <input type="checkbox" name="prime" id="prime">
+    <button  id="savebutton">ENVIAR</button>
 
 </form>
 
 </div>
 
-<table>
+<table id="tabel">
 
-    <tr>
+    <thead>
 
-        <th>ID</th>
-        <th>PRODUTO</th>
-        <th>PREÇO</th>
-        <th>PRIME</th>
-        <th id="acao">AÇÕES</th>
-        
-        </tr>
-        
+        <tr>
+
+            <th>ID</th>
+            <th>PRODUTO</th>
+            <th>PREÇO</th>
+            <th>PRIME</th>
+            <th id="acao">AÇÕES</th>
+            
+            </tr>    
+
+            <tbody id="tabela"></tbody>
+
+    </thead>
+    
 
 </table>
 

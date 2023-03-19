@@ -18,13 +18,10 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 }
 
-th{
-border: solid 1px #000;
-border-collapse: collapse;
+th,td{
+border: solid 2px #000;
+border-collapse: separate;
 background: transparent;
-border-top: none;
-border-bottom: none;
-border-left: none;
 }
 
 table{
@@ -33,7 +30,7 @@ border-collapse:separate;
 border: solid #000 2px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
-border-radius: 5px 5px 0px 0px;
+border-radius: 10px 10px 0px 0px;
 border-spacing: 0;
 overflow: hidden;
 width: 90%;
@@ -53,7 +50,6 @@ width: 90%;
     border-radius: 5px;
     cursor:pointer;
     background: transparent;
-    
 }
 
 .inputs{
@@ -61,7 +57,8 @@ margin-top: 50px;
 }
 
 #acao{
-border-right: none;
+    border: solid #000 2px;
+
 }
 
 input{

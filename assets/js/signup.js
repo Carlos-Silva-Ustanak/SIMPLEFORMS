@@ -48,13 +48,16 @@ pass.addEventListener('keyup', () =>{
     
     })
 
+   
 
         function cadastrar (){
 
             let users = JSON.parse(localStorage.getItem('users') || '[]')
 
+
+
             let user ={
-                id: users.value + 1,
+                id: users.length + 1,
                 email : email.value,
                 senha : pass.value
             }
@@ -62,8 +65,8 @@ pass.addEventListener('keyup', () =>{
             users.push(user)
     
             localStorage.setItem('users', JSON.stringify(users))
+          
     
-            
          
        location.href = '../html/index.html'
     
