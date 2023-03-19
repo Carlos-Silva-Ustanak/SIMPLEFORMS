@@ -45,7 +45,6 @@ if(emailin.value == usuariosValidos.email && passin.value == usuariosValidos.sen
 
 window.open('../html/logged.html')
 let token = Math.random().toString(16).substr(2)
-console.log(token)
 localStorage.setItem('token', token)
 }
 

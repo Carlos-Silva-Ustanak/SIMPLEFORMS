@@ -5,13 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/logged.css">
 </head>
 <body>
     
-<h1>hello</h1>
-<button onclick="logOut()">sair</button>
+<h1 style="text-align: center;">CADASTRO DE PRODUTOS</h1>
 
+<div class="inputs">
+
+<form action="">
+
+    <label for="produto">PRODUTOS:</label>
+    <input id="produtos" required name="produto" type="text">
+    <label for="preço">PREÇO:</label>
+    <input required id="preco" type="text">
+    <label for="prime">É PRIME?</label>
+    <input type="checkbox" name="prime" id="">
+    <button type="submit" id="savebutton">ENVIAR</button>
+
+</form>
+
+</div>
+
+<table>
+
+    <tr>
+
+        <th>ID</th>
+        <th>PRODUTO</th>
+        <th>PREÇO</th>
+        <th>PRIME</th>
+        <th id="acao">AÇÕES</th>
+        
+        </tr>
+        
+
+</table>
+
+
+
+<button id="btn" onclick="logOut()">sair</button>
 
 <script src="../js/logged.js"></script>
+
+
 </body>
+
+
 </html>

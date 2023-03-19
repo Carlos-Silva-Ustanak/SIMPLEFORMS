@@ -1,0 +1,70 @@
+*{
+
+padding: 0;
+margin: 0;
+
+}
+
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+font-family: 'Fredoka One', cursive;
+background-position: center center;
+background-size: cover;
+background-image: url(../img/20534010.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+th{
+border: solid 1px #000;
+border-collapse: collapse;
+background: transparent;
+border-top: none;
+border-bottom: none;
+border-left: none;
+}
+
+table{
+margin-top:50px;
+border-collapse:separate;
+border: solid #000 2px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px 5px 0px 0px;
+border-spacing: 0;
+overflow: hidden;
+width: 90%;
+}
+
+#savebutton{
+
+    font-family: 'Fredoka One', cursive;
+    background: transparent;
+    border-radius: 5px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+#btn{
+    font-family: 'Fredoka One', cursive;
+    border-radius: 5px;
+    cursor:pointer;
+    background: transparent;
+    
+}
+
+.inputs{
+margin-top: 50px;
+}
+
+#acao{
+border-right: none;
+}
+
+input{
+border-radius: 5px;
+cursor: pointer;
+}
