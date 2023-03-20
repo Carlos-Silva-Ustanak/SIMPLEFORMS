@@ -20,6 +20,7 @@ let saveButton = document.getElementById('savebutton');
 let produtos = document.getElementById('produtos')
 let preco = document.getElementById('preco')
 let prime = document.getElementById('prime')
+saveButton.disabled = true;
 
 /*EVENTO PARA GARANTIR QUE NÃO SEJAM ENVIADOS INPUTS VAZIOS PARA O LOCALSTORAGE */
 saveButton.disabled = true;
@@ -67,7 +68,7 @@ saveButton.addEventListener('click', (e) => {
 
 e.preventDefault();
 
-    let products = JSON.parse(localStorage.getItem('produtos') || '[]')
+let products = JSON.parse(localStorage.getItem('produtos') || '[]')
 
     let produ = {
 
@@ -78,11 +79,12 @@ e.preventDefault();
 
     }
 
-    products.push(produ);
-    localStorage.setItem('produtos', JSON.stringify(products))
-    forms.reset();
-    attTable();
+ 
 
+        products.push(produ);
+        localStorage.setItem('produtos', JSON.stringify(products))
+        forms.reset();
+        attTable();
 })
 
 
@@ -103,7 +105,11 @@ let attTable = () => {
                 <td style = "text-align: center">${produtos.pro}</td>
                 <td style = "text-align: center">R$${produtos.price}</td>
                 <td style = "text-align: center">${produtos.pri ? "sim" : "não"}</td>
-            
+                <td style = "text-align: center">
+                <img type = "button" width = "40px"  onclick = "attItem(${produtos.id})" src ="../img/editar-arquivo.png"></img>
+                <img type = "button" width = "40px"  onclick = "removeitem(${produtos.id})" src ="../img/bin.png"></img>                
+                </td>
+                
             </tr>
 
 `;
@@ -112,5 +118,38 @@ let attTable = () => {
 
 }
 
+/* REMOVER ITEM NA TABELA */
+let removeitem = (id)=>{
+
+let local = JSON.parse(localStorage.getItem('produtos') || '[]')
+let indexProduto = local.findIndex((local)=> local.id === id)
+if(indexProduto < 0 )return;
+local.splice(indexProduto, 1)
+localStorage.setItem('produtos', JSON.stringify(local))
+attTable();
+
+}
+
+let attItem = (id)=>{
+
+    let local = JSON.parse(localStorage.getItem('produtos') || '[]')
+    let indexProduto = local.findIndex((local)=> local.id === id)
+
+    forms.produto.value = local[indexProduto].pro
+    forms.preco.value = local[indexProduto].price;
+    forms.prime.checked = local[indexProduto].pri
+    idx = id;
+
+}
+
+let editItem = (id, produtos)=>{
+    let local = JSON.parse(localStorage.getItem('produtos') || '[]')
+    let indexProduto = local.findIndex((local)=> local.id === id)
+
+    local[indexProduto] = produto;
+    localStorage.setItem('produtos', JSON.stringify(local))
+}
+
+
 /* SALVAR CONTEÚDO ATUALIZADO NA TABELA */
-document.addEventListener("DOMContentLoaded", attTable);
+document.addEventListener("DOMContentLoaded", attTable());
