@@ -1,9 +1,5 @@
-if (sessionStorage.getItem('log') == null) {
-
-    window.location.href = '../html/index.html'
-
-}
-
+let logs  = sessionStorage.getItem('logado')
+console.log(logs)
 /* FUNÇÃO PARA DESLOGAR E REMOVER O TOKEN DE SEGURANÇA DO LOCALSTORAGE */
 function logOut() {
 
@@ -16,6 +12,8 @@ const forms = document.querySelector("#forms");
 const tabela = document.querySelector("#tabela");
 const btn = document.querySelector("#savebutton");
 let idx = forms.idx.value;
+
+
 
 let userId = Number(sessionStorage.getItem('logado'));
 
@@ -43,7 +41,7 @@ return;
 
 
 const attLocalStorage = (funcionarios)=>{localStorage.setItem('funcionarios', JSON.stringify(funcionarios))}
-
+const attLocalStorageUsers = ()=> JSON.parse(localStorage.getItem('users') || '[]')
 const recuperarLocalStorage =()=> JSON.parse(localStorage.getItem('funcionarios') || '[]') 
 
 const salvarFuncionario = (e)=>{
@@ -90,7 +88,7 @@ idx = "novo";
 const preencherTabela = ()=>{
 
 const funcionarios = recuperarLocalStorage();
-tabela.innerHTML = '';
+tabela.innerHTML = "";
 
 for(const fun of funcionarios){
 
@@ -126,32 +124,36 @@ tabela.innerHTML += `
 const removerFuncionario = (id)=> {
 
 const data = recuperarLocalStorage();
-const indexFuncionario = data.findIndex((funcionarios) => funcionarios.id === id);
+const indexFuncionario = data.findIndex((funcionarios) => funcionarios.userId === userId && funcionarios.id == id );
 if(indexFuncionario < 0 )return;
 data.splice(indexFuncionario, 1);
 attLocalStorage(data);
 preencherTabela();
+
 }
 
 const attFuncionarios = (id)=>{
 
      const data = recuperarLocalStorage();
-     const indexFuncionario = data.findIndex((funcionarios) => funcionarios.id === id);
+     const indexFuncionario = data.findIndex((funcionarios) => funcionarios.userId  === userId && funcionarios.id == id);
      forms.funcio.value = data[indexFuncionario].funcionarioNome;
      forms.cargo.value = data[indexFuncionario].cargo;
      forms.proativ.checked = data[indexFuncionario].proativ;
      idx = id;
+     preencherTabela();
 }
 
 const editar = (id, funcionario)=>{
 
     const data = recuperarLocalStorage();
-    const indexFuncionario = data.findIndex((funcionario) => funcionario.id === id);
+    const indexFuncionario = data.findIndex((funcionario) => funcionario.userId === userId && funcionario.id == id);
     data[indexFuncionario] = funcionario;
     attLocalStorage(data);
+    preencherTabela();
 
 
 }
+
 
 forms.addEventListener('submit', salvarFuncionario)
 document.addEventListener('DOMContentLoaded', preencherTabela)
