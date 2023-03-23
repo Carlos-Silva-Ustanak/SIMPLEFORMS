@@ -11,18 +11,18 @@
 </head>
 <body>
     
-<h1 style="text-align: center;">CADASTRO DE PRODUTOS</h1>
+<h1 style="text-align: center;">CADASTRO DE FUNCIONARIOS</h1>
 
 <div class="inputs">
 
 <form id="forms" action="">
 
-    <label for="produto">PRODUTOS:</label>
-    <input id="produtos" required name="produto" type="text">
-    <label for="preço">PREÇO:</label>
-    <input required id="preco" type="text">
-    <label for="prime">É PRIME?</label>
-    <input type="checkbox" name="prime" id="prime">
+    <label for="produto">FUNCIONARIOS:</label>
+    <input id="funcio" required name="produto" type="text">
+    <label for="preço">CARGO:</label>
+    <input required id="cargo" type="text">
+    <label for="prime">É PROATIVO?</label>
+    <input type="checkbox" name="prime" id="proativ">
     <input type="hidden" name="novo" value="novo" id="idx">
     <button  id="savebutton">ENVIAR</button>
 
@@ -37,10 +37,10 @@
         <tr>
 
             <th>ID</th>
-            <th>PRODUTO</th>
-            <th>PREÇO</th>
-            <th>PRIME</th>
-            <th id="acao">AÇÕES</th>
+            <th>NOME</th>
+            <th>CARGO</th>
+            <th>PROATIVO?</th>
+            <th id="acao" >AÇÕES</th>
             
             </tr>    
 
