@@ -1,4 +1,4 @@
-if (localStorage.getItem('token') == null) {
+if (sessionStorage.getItem('log') == null) {
 
     window.location.href = '../html/index.html'
 
@@ -7,7 +7,7 @@ if (localStorage.getItem('token') == null) {
 /* FUNÇÃO PARA DESLOGAR E REMOVER O TOKEN DE SEGURANÇA DO LOCALSTORAGE */
 function logOut() {
 
-    localStorage.removeItem('token')
+    sessionStorage.removeItem('log')
     window.location.href = '../html/index.html'
 
 }
@@ -16,6 +16,31 @@ const forms = document.querySelector("#forms");
 const tabela = document.querySelector("#tabela");
 const btn = document.querySelector("#savebutton");
 let idx = forms.idx.value;
+
+let userId = Number(sessionStorage.getItem('logado'));
+
+const session = localStorage.getItem('session')
+
+logadoOuNao();
+
+function logadoOuNao(){
+
+if(session){
+
+    sessionStorage.setItem('log', session)
+    userId = session;
+}
+
+if(!userId){
+
+window.location.href = "../html/index.html"
+return;
+
+}
+
+
+}
+
 
 const attLocalStorage = (funcionarios)=>{localStorage.setItem('funcionarios', JSON.stringify(funcionarios))}
 
@@ -31,14 +56,25 @@ const proativ = forms.proativ.checked;
 if(idx == "novo"){
 
     const funcionarios = recuperarLocalStorage();
-    funcionarios.push({id: funcionarios.length + 1, funcionarioNome, cargo, proativ})
+   /*  funcionarios.push({id: funcionarios.length + 1, funcionarioNome, cargo, proativ}) */
+   let idp = 0;
+   for(const f of funcionarios){
+
+if(f.userId == userId){
+
+    idp =  Number(f.id);
+
+}
+
+   }
+    funcionarios.push({id: idp +=1, funcionarioNome, cargo, proativ, userId})
     attLocalStorage(funcionarios);
     preencherTabela();
     forms.reset();    
 
 }else{
 
-let funcionario = {id: idx, funcionarioNome, cargo, proativ }
+let funcionario = {id: idx, funcionarioNome, cargo, proativ ,userId}
 editar(id = idx,  funcionario);
 preencherTabela();
 forms.reset();
@@ -57,6 +93,8 @@ const funcionarios = recuperarLocalStorage();
 tabela.innerHTML = '';
 
 for(const fun of funcionarios){
+
+    if(fun.userId == userId){
 
 tabela.innerHTML += `
 
@@ -77,9 +115,9 @@ tabela.innerHTML += `
 </tr>
 
 
-` ;
+` ;}
 
-
+    
 }
 
 
