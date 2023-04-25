@@ -8,17 +8,13 @@ if (emailin.value && passin.value == '') {
 
     btn.disabled = true;
 
-
 }
 
 function entrar(e) {
 
-
-
     let users = []
 
     let usuariosValidos = {
-
 
         email: '#',
         senha: '#'
@@ -48,7 +44,6 @@ function entrar(e) {
         localStorage.setItem('token', token)
     }
 
-
     else {
 
         Swal.fire({
@@ -66,18 +61,16 @@ function entrar(e) {
         })
 
     }
-
 }
 
-function saveSession(data){
+function saveSession(data) {
 
-if(saveSession){
+    if (saveSession) {
 
-localStorage.setItem('session', data);
+        localStorage.setItem('session', data);
 
-}
+    }
 
-sessionStorage.setItem("logado", JSON.stringify(data));
-
+    sessionStorage.setItem("logado", JSON.stringify(data));
 
 }
